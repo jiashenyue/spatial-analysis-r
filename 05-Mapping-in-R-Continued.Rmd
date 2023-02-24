@@ -199,7 +199,8 @@ ggplot() +
                  shape = Observed),
              size = 3) +
   scale_color_distiller(palette = "RdBu") +
-  coord_fixed()
+  coord_fixed()+
+  theme_bw()
 ```
 
 You will notice maybe that with this coloring scheme some observations become very light and difficult to distinguish from the background. This can be solved in many different ways (for instance, by changing the color of the background!). A simple fix is to add a layer with hollow symbols, as follows:
@@ -217,7 +218,8 @@ ggplot() +
              shape = 2, 
              size = 3) +
   scale_color_distiller(palette = "RdBu") +
-  coord_fixed()
+  coord_fixed()+
+  theme_bw()
 ```
 
 Finally, you could try subsetting the data to have greater control of the appearance of your plot, for instance:

@@ -179,7 +179,8 @@ ggplot() +
              aes(x = x, 
                  y = y), 
              shape = 15) +
-  coord_fixed()
+  coord_fixed()+
+  theme_bw()
 ```
 
 By changing the probability `prob` in the function `rbinom` you can make the event more or less likely, i.e., frequent. If you are working with the notebook version of this document you can try changing the parameters to see what happens.
@@ -218,7 +219,8 @@ ggplot() +
                  color = heights), 
              shape = 15) +
   scale_color_distiller(palette = "Spectral") +
-  coord_fixed()
+  coord_fixed() + 
+  theme_bw()
 ```
 
 These two examples illustrate only two of many possible techniques to generate null landscapes. We will discuss other strategies to work with null landscapes later in the course.
@@ -281,7 +283,7 @@ ggplot() +
                  y = y), 
              shape = 15) +
   xlim(0, 1) +
-  coord_fixed()
+  coord_fixed() + theme_bw()
 ```
 
 In the process above, we used the function `round()` and the coordinate `x`. The function gives a value of one for all points with x > 0.5, and a value of zero to all points with x <= 0.5. The pattern is fully deterministic: if I know the value of the x coordinate I can predict whether an event will be present.
@@ -441,7 +443,7 @@ ggplot() +
                                 color = heights), 
              shape = 15) +
   scale_color_distiller(palette = "Spectral") +
-  coord_fixed()
+  coord_fixed() + theme_bw()
 ```
 
 As expected, shorter people are towards the "front" (bottom of the plot) and taller people towards the back. It is not a uniform process, since there is still some randomness, but a trend can be clearly appreciated.

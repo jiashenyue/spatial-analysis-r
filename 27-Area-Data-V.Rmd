@@ -166,8 +166,8 @@ ggplot(data = Hamilton_CT, aes(x = dist.sl,
               intercept = model1$coefficients[1], 
               color = "blue", size = 1) +
   geom_vline(xintercept = 0) + # We also add the y axis... 
-  geom_hline(yintercept = 0) # ...and the x axis.
-
+  geom_hline(yintercept = 0)+ # ...and the x axis.
+  theme_bw()
 ```
 
 Clearly, there remains a fair amount of noise after this model (the scatter of the dots around the regression line). In this case, the regression line captures the general trend of the data, but seems to underestimate most of the high population density areas closer to the CBD, and it also overestimates many of the low population areas.
@@ -247,7 +247,8 @@ ggplot(data = Hamilton_CT,
                 color = "blue",
                 size = 1) +
   geom_vline(xintercept = 0) + 
-  geom_hline(yintercept = 0)
+  geom_hline(yintercept = 0) +
+  theme_bw()
 ```
 
 We will add the residuals of this model to the dataframe for further examination, in particular testing for spatial autocorrelation:
@@ -440,7 +441,7 @@ ggplot(data = Hamilton_CT, aes(x = dist.sl, y = POP_DENSITY)) +
   # Set the colors of the regression lines
   scale_color_manual(values = c("CBD" = "red", "Other" = "black", "Suburb" = "blue")) +
   geom_vline(xintercept = 0) + # Add the y axis...
-  geom_hline(yintercept = 0) # ...and the x axis.
+  geom_hline(yintercept = 0) + theme_bw() # ...and the x axis.
 ```
 
 This example illustrate how spatial exploratory analysis can provide valuable insights to improve our models, and in turn hopefully develop a better understanding of the underlying process. What can you say about population density in Hamilton based on this model?
